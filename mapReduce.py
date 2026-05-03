@@ -21,6 +21,8 @@ def wcMap(text):
     words = text.split()
     return list(map(lambda w: (w, 1), words))
 
+
+
 '''
 Function: groupByKey
 Parameters: List of Tuples
@@ -30,7 +32,9 @@ Given a list of tuples, this function creates a new list of tuples where all the
 values of like keys are grouped in one tuple.
 '''
 def groupByKey():
-    pass
+    grouped = reduce(lambda acc, pair: {**acc, pair[0]: acc.get(pair[0], []) + [pair[1]]}, pairs, {})
+    return list(grouped.items())
+
 
 
 '''
