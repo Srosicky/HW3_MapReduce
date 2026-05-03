@@ -5,21 +5,44 @@ Authors: Leyna Fougere + Sophia Rosicky
 Assignment: Homework 3 - Higher Order Functions
 '''
 
-# Permitted: recursion, map(), filter(), reduce() 
-# Not Allowed: loops and most built-in functions (len, sort, sum, etc.)
+from functools import reduce
 
 
+'''
+Function: wcMap
+Parameters: Text String
+Returns: List of Tuples
 
-#TODO: wcMap function
+This function splits the text into individual tokens, pairs each token with a count value, 
+then adds the resulting tuple to a comprehensive list which is then returned.
+'''
+def wcMap(text):
+    
+    words = text.split()
+    return list(map(lambda w: (w, 1), words))
+
+'''
+Function: groupByKey
+Parameters: List of Tuples
+Returns: List of Tuples
+
+Given a list of tuples, this function creates a new list of tuples where all the corresponding
+values of like keys are grouped in one tuple.
+'''
+def groupByKey():
+    pass
 
 
+'''
+Function: wcReduce
+Parameters: List of Tuples
+Returns: List of Tuples
 
-#TODO: groupByKey function
-
-
-
-#TODO: wcReduce function
-
+Given a list of tuples, this function take the second value of each and reduces it to reflect the
+total count for a given key.
+'''
+def wcReduce():
+    pass
 
 
 #Test Code
