@@ -31,7 +31,7 @@ Returns: List of Tuples
 Given a list of tuples, this function creates a new list of tuples where all the corresponding
 values of like keys are grouped in one tuple.
 '''
-def groupByKey():
+def groupByKey(pairs):
     grouped = reduce(lambda acc, pair: {**acc, pair[0]: acc.get(pair[0], []) + [pair[1]]}, pairs, {})
     return list(grouped.items())
 
@@ -45,8 +45,8 @@ Returns: List of Tuples
 Given a list of tuples, this function take the second value of each and reduces it to reflect the
 total count for a given key.
 '''
-def wcReduce():
-    pass
+def wcReduce(groups):
+    return list(map(lambda group: (group[0], reduce(lambda acc, x: acc + x, group[1])), groups))
 
 
 #Test Code
